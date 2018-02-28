@@ -1,25 +1,40 @@
 /* Adding Custom Font */
-/* @import (''); */
+@import url('https://fonts.googleapis.com/css?family=Anton');
 
 /* Global Attributes */
 
 *{
     margin: 0;
     padding: 0;
+    font-family: Anton, sans-serif;
 }
+
+body{
+    background: lightblue;
+}
+
 
 /* Styling the Game Board */
 
 table{
     margin: 0 auto;
-
 }
 
 td{
-    border: 1px solid #000;
+    border: 3px solid #000;
     width: 150px;
     height: 150px;
     text-align: center;
+    border-radius: 18px;
+    font-size: 2em;
+}
+
+.center{
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: 30px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
 }
 
 /* Styling the text */
@@ -28,4 +43,16 @@ td{
     text-align: center;
     letter-spacing: 8px;
     margin: 2.5% 0 2.5% 0;
+}
+
+/* Styling the Hit and Miss classes */
+
+.hit{
+    /* background: red; */
+    background: green;
+}
+
+.miss{
+    /* background: green; */
+    background: red;
 }
