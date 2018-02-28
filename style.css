@@ -47,12 +47,12 @@ td{
 
 /* Styling the Hit and Miss classes */
 
-.hit{
+.miss{
     /* background: red; */
     background: green;
 }
 
-.miss{
+.hit{
     /* background: green; */
     background: red;
 }

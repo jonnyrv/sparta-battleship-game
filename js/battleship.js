@@ -28,12 +28,12 @@ $(function(){
         $.fn.chkShip(shipLocation2, "You Sank all the enemy ships", torpedoHitLocation, damageShip2); 
         $.fn.chkShip(shipLocation3, "You Sank all the enemy ships", torpedoHitLocation, damageShip3);
 
-        $("[data-ship = " + torpedoHitLocation + "]").addClass("hit");
+        $("[data-ship = " + torpedoHitLocation + "]").addClass("miss");
         if(torpedoLeft == 0){
             alert("You lost the game !!!");
         }
     });
-    
+
     $.fn.displayMessage = function(attackSucc, message){
         $(textAlert).html(message);
     }
@@ -51,8 +51,7 @@ $(function(){
                 attackShip++;
                 hitCount++;
                 torpedoLeft++;
-                console.log(hitCount);
-                $("[data-ship = " + hitLocation + "]").addClass("miss");
+                $("[data-ship = " + hitLocation + "]").addClass("hit");
                 if(hitCount == 9){
                     $(textAlert).html(message);
                     torpedoLeft += 4;
