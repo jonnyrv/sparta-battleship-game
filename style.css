@@ -1,16 +1,20 @@
 /* Adding Custom Font */
 @import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Pirata+One');
 
 /* Global Attributes */
 
 *{
     margin: 0;
     padding: 0;
-    font-family: Anton, sans-serif;
+    font-family: Pirata One, sans-serif;
 }
 
 body{
-    background: lightblue;
+    background-image: url(images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -18,6 +22,11 @@ body{
 
 table{
     margin: 0 auto;
+    margin-left: 69px;
+    background-image: url(images/map.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 18px;
 }
 
 td{
@@ -27,14 +36,31 @@ td{
     text-align: center;
     border-radius: 18px;
     font-size: 2em;
+    background-image: url(images/water.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 .center{
     text-align: center;
+    margin-right: 28%;
     margin-bottom: 2%;
     font-size: 30px;
     letter-spacing: 8px;
     text-transform: uppercase;
+}
+
+.centerInstr{
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+    background: #000;
+    text-transform: uppercase;
+    letter-spacing: 8px;
 }
 
 /* Styling the text */
@@ -43,16 +69,192 @@ td{
     text-align: center;
     letter-spacing: 8px;
     margin: 2.5% 0 2.5% 0;
+    margin-right: 28%;
+    font-size: 69px;
 }
 
 /* Styling the Hit and Miss classes */
 
-.miss{
+.hit{
     /* background: red; */
-    background: green;
+    /* background: green; */
+    background-image: url(images/fail.png);
+    background-position: center;
+    background-size: 150px;
+    animation: bounceIn 2s;
 }
 
-.hit{
+.miss{
     /* background: green; */
-    background: red;
+    /* background: red; */
+    background-image: url(images/pirateship.png);
+    background-position: center;
+    background-size: 150px;
+    animation: swing 2s;
+}
+
+
+
+@keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes swing {
+    20% {
+      -webkit-transform: rotate3d(0, 0, 1, 15deg);
+      transform: rotate3d(0, 0, 1, 15deg);
+    }
+  
+    40% {
+      -webkit-transform: rotate3d(0, 0, 1, -10deg);
+      transform: rotate3d(0, 0, 1, -10deg);
+    }
+  
+    60% {
+      -webkit-transform: rotate3d(0, 0, 1, 5deg);
+      transform: rotate3d(0, 0, 1, 5deg);
+    }
+  
+    80% {
+      -webkit-transform: rotate3d(0, 0, 1, -5deg);
+      transform: rotate3d(0, 0, 1, -5deg);
+    }
+  
+    to {
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+  }
+  
+  .swing {
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation-name: swing;
+    animation-name: swing;
+  }
+
+  @keyframes rubberBand {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+      transform: scale3d(1.25, 0.75, 1);
+    }
+  
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+      transform: scale3d(0.75, 1.25, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+      transform: scale3d(0.95, 1.05, 1);
+    }
+  
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+      transform: scale3d(1.05, 0.95, 1);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .rubberBand {
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+  }
+
+
+/* The Modal (background) */
+.winmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.win-modal-content {
+    /* background-color: #fefefe; */
+    background-image: url(images/winpicture.jpg);
+    background-position: center;
+    background-size: cover;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 250px;
+    text-align: center;
+}
+
+/* The Modal (background) */
+.losemodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.lose-modal-content {
+    /* background-color: #fefefe; */
+    background-image: url(images/losepicture.jpg);
+    background-position: center;
+    background-size: cover;
+    color: red;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 250px;
+    text-align: center;
+}
+
+.moveDown{
+    margin-top: 8%;
+    font-size: 50px;
+    margin-bottom: 2%;
+}
+
+.closeBtn{
+    background: #000;
+    color: #fff;
+    padding: 18px;
+    text-decoration: none;
+    margin-top: 20%;
+    text-transform: uppercase;
+    letter-spacing: 8px;
 }

@@ -4,48 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>BattleShips</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
 </head>
 <body>
+
+    <embed src="audio/main.mp4" autostart="true" loop="true" hidden="true"> 
+    <h1 class="textTitle center">PirateShips | Treasure Island</h1>
     
-    <h1 class="textTitle">BattleShip Game</h1>
 
     <!-- Game Board --> 
     <table id="gameBoard">
-        <div id="showMessage" class="center">helloPeople</div>
+        <div id="showMessage" class="center">Destroy all the Pirate Ships </div>
+        <div id="torpedos" class="center">You got 12 cannon balls lefts</div>
+        <a href="instructions.html" class="centerInstr">Instructions</a>
             <!-- First Row --> 
             <tr>
                 <td data-ship = "0" id="0" ></td>
                 <td data-ship = "1" ></td>
                 <td data-ship = "2" ></td>
                 <td data-ship = "3" ></td>
+                <td data-ship = "4" ></td>
+                <td data-ship = "5" ></td>
             </tr>
             <!-- Second Row -->
             <tr>
-                <td data-ship = "4" ></td>
-                <td data-ship = "5" ></td>
                 <td data-ship = "6" ></td>
                 <td data-ship = "7" ></td>
-            </tr>
-            <!-- Third Row --> 
-            <tr>
                 <td data-ship = "8" ></td>
                 <td data-ship = "9" ></td>
                 <td data-ship = "10" ></td>
                 <td data-ship = "11" ></td>
             </tr>
-            <!-- Fourth Row -->
+            <!-- Third Row --> 
             <tr>
                 <td data-ship = "12" ></td>
                 <td data-ship = "13" ></td>
                 <td data-ship = "14" ></td>
                 <td data-ship = "15" ></td>
+                <td data-ship = "16" ></td>
+                <td data-ship = "18" ></td>
+            </tr>
+            <!-- Fourth Row -->
+            <tr>
+                <td data-ship = "19" ></td>
+                <td data-ship = "20" ></td>
+                <td data-ship = "21" ></td>
+                <td data-ship = "22" ></td>
+                <td data-ship = "23" ></td>
+                <td data-ship = "24" ></td>                
             </tr>
     </table>
 
-    <script src="js/battleship.js"></script>
+
+<!-- Win The Modal -->
+<div id="winModal" class="winmodal">
+
+<!-- Win Modal content -->
+<div class="win-modal-content">
+    <h2 class="moveDown">Congratulation you sunk all the enemy ships !</h2>
+    <a href="" class="resetBtn closeBtn">Start Again</a>
+</div>
+
+</div>
+
+<!-- Lose The Modal -->
+<div id="loseModal" class="losemodal">
+
+<!-- Lose Modal content -->
+<div class="lose-modal-content">
+    <h2 class="moveDown">You are sleeping with the fishes tonight ! ARGHHH !</h2>
+    <a href="" class="resetBtn closeBtn">Start Again</a>    
+</div>
+
+</div>
+
+
+
+<script src="js/battleships.js"></script>
     
 
 </body>
